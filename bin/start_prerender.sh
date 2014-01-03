@@ -4,6 +4,11 @@ export DATE=`date +%F-%H`
 
 pushd $DIR/..
 
+if [ ! "$PRERENDER_WORKDIR_PREFIX" ]
+then
+PRERENDER_WORKDIR_PREFIX="."
+fi
+
 LOG_DIR=$PRERENDER_WORKDIR_PREFIX/logs
 mkdir -p $LOG_DIR
 
