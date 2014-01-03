@@ -12,7 +12,8 @@ fi
 LOG_DIR=$PRERENDER_WORKDIR_PREFIX/logs
 mkdir -p $LOG_DIR
 
-mkdir -p pids
+PID_DIR=$PRERENDER_WORKDIR_PREFIX/pids
+mkdir -p $PID_DIR
 
 node index.js &>> $LOG_DIR/$DATE.log &
-echo $! > pids/prerender.pid
+echo $! > $PID_DIR/prerender.pid
